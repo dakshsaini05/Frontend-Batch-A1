@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <style>
+        /* Relative */
+        .container {
+            height: 500px;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-bottom: 15px;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            z-index: 1; /*z-index helps to overlap containers by default it is 0 for every element but to overlap the container must have higher z-index */
+        }
+
+        .one {
+            position: relative;
+            background-color: blue;
+            top: 80px;
+        }
+
+        /* Absolute */
+        .container1 {
+            height: 500px;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+        }
+
+        .one1 {
+            position: absolute;
+            background-color: green;
+            top: 45px;
+        }
+
+        /* Fixed */
+        .fix {
+            position: fixed;
+            top: 330px;
+            right: 200px;
+            background-color: rgb(132, 0, 232);
+        }
+
+        p {
+            margin: 10px;
+            position: sticky;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Types of Positions
+     1. Static
+     2. Relative
+     3. Absolute
+     4. Fixed
+     5. Sticky
+      -->
+
+        <!-- Sticky position property -->
+       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde praesentium in libero dignissimos impedit delectus rem magnam commodi laboriosam est eius placeat recusandae, quibusdam fugiat ipsam ipsa asperiores aut incidunt.</p>
+       <!-- Relative -->
+      <div class="container">
+        <div class="box one"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+      <!-- Absolute -->
+      <div class="container1">
+        <div class="box1 one1"></div>
+        <div class="box1"></div>
+        <div class="box1 fix"></div> <!--Fixed postion property-->
+        <div class="box1"></div>
+      </div>
+</body>
+</html>
