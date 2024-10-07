@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            background-color: brown;
+            height: 100px;
+            width: 100%;
+        }
+        .child{
+            background-color: black;
+            height: 100px;
+            width: 50%;
+            margin-left: 25%;
+        }
+        .grand-child{
+            background-color: blue;
+            height: 100px;
+            width: 50%;
+            margin-left: 50%;
+        }
+
+        .circle{
+            background-color: black;
+            height: 440px;
+            width: 440px;
+            border-radius: 50%;
+        }
+        .circle-child{
+            background-color: white;
+            height: 50%;
+            width: 50%;
+            margin-left: 25%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Box -->
+    <h1 style="text-align: center;">Box</h1>
+
+    <div class="parent">
+        <div class="child">
+            <div class="grand-child"></div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="circle">
+        <div class="circle-child"></div>
+    </div>
+</body>
+</html>
