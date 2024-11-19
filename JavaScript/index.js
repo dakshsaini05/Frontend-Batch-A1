@@ -15,14 +15,14 @@
 // let arr1 = arry2.map(a => a.toUpperCase());
 // console.log(arr1);
 
-let arr = [1,2,3,4,5]
-let max = 0
-arr.map((a) => {
-    if(max < a) {
-        max = a
-    }
-})
-console.log(max);
+// let arr = [1,2,3,4,5]
+// let max = 0
+// arr.map((a) => {
+//     if(max < a) {
+//         max = a
+//     }
+// })
+// console.log(max);
 
 let data = [{
     "id": 1,
@@ -96,17 +96,34 @@ let data = [{
     "ip_address": "75.150.75.95"
   }]
   
-let mail = data.map(a => a.email)
-console.log(mail)
+// let mail = data.map(a => a.email)
+// console.log(mail)
 
-let m = 0;
-let f = 0;
-let gen = data.map((a) => {
-    if(a.gender == "Male") {
-        m += 1
-    }
-    else if(a.gender == "Female") {
-        f+=1
-    }
-})
-console.log(m,f)
+// let m = 0;
+// let f = 0;
+// let gen = data.map((a) => {
+//     if(a.gender == "Male") {
+//         m += 1
+//     }
+//     else if(a.gender == "Female") {
+//         f+=1
+//     }
+// })
+// console.log(m,f)
+
+let marks = [67,56,95,45,60]
+let sum = marks.reduce((a,c) => {
+  return a + c
+},0)
+let avg = sum / marks.length
+console.log(avg)
+let result = function (a) {
+  if(a > 33) {
+    console.log("Pappu Pass ho gaya")
+    // return "Pappu pass ho gaya"
+  } else {
+    console.log("pappu fail ho gaya")
+    // return "Pappu fail ho gaya"
+  }
+}
+result(avg)
