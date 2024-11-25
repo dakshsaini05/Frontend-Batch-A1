@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <input id="" type="text">
+    <button id="btnAddExpense">+</button>
+    <script>
+
+        // init value of expanse at zero
+        let totalExpense = 0;
+
+        // onButtonClick add inputAmount to totalExpense
+        function addExpenseToTotal() {
+            //  Read value from btnAmountExpense 
+            const inputElement = document.getElementById("btnAddExpense");
+            const textAmount = inputElement.value;
+            console.log(textAmount)
+
+            // Convert it to number 
+
+            // add value to totalExpanse
+        }
+        
+        
+        // Get the button reference
+        const btnCounter = document.querySelector("#btnAddExpense");
+        
+        // Listen to click event
+        btnCounter.addEventListener("click", addExpenseToTotal, false);
+
+        
+    </script>
+</body>
+</html>

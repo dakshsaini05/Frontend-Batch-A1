@@ -1,0 +1,16 @@
+.navbar {
+    background-color: lightblue;
+    height: 200px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-items {
+    /* border: 1px solid black; */
+    display: flex;
+    width: 81%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+

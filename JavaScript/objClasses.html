@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const student1 = {
+            name: "Daksh saini",
+            marks: 90,
+            printMarks: function () {
+                console.log(`Marks = ${this.marks}`);
+            }
+        };
+
+        const student3 = {
+            printName() {
+                console.log("This is ", this.name);
+            }
+        };
+
+        const student2 = {
+            name: "Kiran Rathore",
+            marks: 85
+        };
+        student2.__proto__ = student1;
+
+        // Class
+        class ToyotaCar {
+            start() {
+                console.log("Start");
+            }
+
+            stop() {
+                console.log("Stop");
+            }
+
+            setBrand(brand) {
+                this.brandName = brand;
+            }
+        }
+
+        // ToyotaCar class's object
+        const fortuner = new ToyotaCar();
+        fortuner.setBrand("fortuner");
+
+        const curve = new ToyotaCar();
+        curve.setBrand("curve");
+    </script>
+</body>
+
+</html>
