@@ -24,26 +24,52 @@
 <body>
     <h1 id="headingTotal">0</h1>
     <input type="text" id="inputAmount">
+    <input type="text" id="inputDesc">
     <button id="btnAddExpense">addNumber</button>
 
     <script>
         // Read the button
         const btn = document.querySelector('#btnAddExpense');
 
+        // Ref to inputAmount
+        const amount = document.querySelector('#inputAmount');
+
         // Get the heading element
         const heading = document.querySelector('#headingTotal');
 
-        // init value to 0
+        // get reference to desc element 
+        const inputDesc = document.querySelector('#inputDesc');
+
+        // init expense's value from 0
         let totalExpense = 0;
+
+        // allExpense at one place
+        const allExpense = [];
 
 
         // onClick add inputAmount to totalExpense
         function addExpensesToTotal() {
+            const expenseItem = {};
+
             // read value from the inputAmount 
-            const amount = document.querySelector('#inputAmount').value;
+            const textAmount = amount.value;
+
+            // read desc from the inputDesc
+            const textDesc = inputDesc.value;
             
-            // Convert the value to a number
-            const numberAmount = parseInt(amount, 10);
+            // Convert the textAmount value to a number
+            const numberAmount = parseInt(textAmount, 10);
+
+            // put all things in an object
+            expenseItem.amount = numberAmount;
+            expenseItem.inputDesc = textDesc;
+            // console.log(expenseItem);
+
+            // Push the data of expenseItem to allExpense array
+            allExpense.push(expenseItem);
+
+            console.clear(); //This will print only print one table
+            console.table(allExpense);
 
             // Add value to totalExpense
             totalExpense += numberAmount;
