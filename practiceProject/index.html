@@ -26,19 +26,19 @@
     <input type="text" id="inputAmount">
     <input type="text" id="inputDesc">
     <button id="btnAddExpense">addNumber</button>
+    <div id="expenseTable"></div>
 
     <script>
         // Read the button
         const btn = document.querySelector('#btnAddExpense');
-
         // Ref to inputAmount
         const amount = document.querySelector('#inputAmount');
-
         // Get the heading element
         const heading = document.querySelector('#headingTotal');
-
         // get reference to desc element 
         const inputDesc = document.querySelector('#inputDesc');
+        // get reference to table element
+        const expenseTable = document.querySelector('#expenseTable');
 
         // init expense's value from 0
         let totalExpense = 0;
@@ -63,20 +63,39 @@
             // put all things in an object
             expenseItem.amount = numberAmount;
             expenseItem.inputDesc = textDesc;
-            // console.log(expenseItem);
-
+            
             // Push the data of expenseItem to allExpense array
             allExpense.push(expenseItem);
-
-            console.clear(); //This will print only print one table
-            console.table(allExpense);
 
             // Add value to totalExpense
             totalExpense += numberAmount;
             
             // set the heading to totalExpense
-            heading.textContent = totalExpense;
+            const someText = `Total: ${totalExpense}`;
+            heading.textContent = someText;
+
+            // Show the table here
+            // const data1 = allExpense[0];
+            // const data2 = allExpense[1];
+
+            // const data1Text = `Expense: ${data1.amount} :: Description: ${data1.inputDesc}`;
+            // const data2Text = `Expense: ${data2.amount} :: Description: ${data2.inputDesc}`;
+
+            // const tableText = `
+            //     <div>${data1Text}</div>
+            //     <div>${data2Text}</div>
+            // `;
+
+            const allExpenseHtml = allExpense.map((expense) => {
+                return `<div>${expense.inputDesc} :: ${expense.amount}</div>`;
+            });
+            const joinedAllExpenseHtml = allExpenseHtml.join("");
+
+            // console.log(joinedAllExpenseHtml);
+
+            expenseTable.innerHTML = joinedAllExpenseHtml;
         }
+        
         // Listen to click event 
         btn.addEventListener('click', addExpensesToTotal, false);
     </script>
